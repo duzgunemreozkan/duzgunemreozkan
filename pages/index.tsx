@@ -43,11 +43,11 @@ export default function Home() {
 
   function getMember(): string {
     const member = new Member();
-    member.name = "Düzgün Emre";
+    member.name = "Emre";
     member.surname = "Özkan";
     member.birthday = new Date();
     member.gender = false;
-    member.age = 32;
+    member.age = 34;
 
     return member.name;
   }
