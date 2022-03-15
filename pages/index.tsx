@@ -32,6 +32,7 @@ export default function Home() {
   type Features = {
     age: Number;
     city: String;
+
   }
 
 
