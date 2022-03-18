@@ -1,14 +1,14 @@
 import React from 'react'
 import Head from 'next/head'
+import Link from 'next/link'
 import Layout from '../components/layout'
-import CardList from '../components/card/CardList';
 
-function Home({ cards, total, skip, limit }) {
 
-  //console.log(cards);
-  console.log(total);
-  console.log(skip);
-  console.log(limit);
+//????Buradaki type ve PropsWithChildren şeklindeki atama ne işe yarıyor.
+//type CardProps = PropsWithChildren<SpacingProps<Theme> & VariantProps<Theme, "
+
+
+function Home() {
 
   return (
     <>
@@ -19,30 +19,15 @@ function Home({ cards, total, skip, limit }) {
       <Layout>
         <div className="container">
           <div className="row">
-            <CardList cards={cards} />
+            <h1>Choose Gallery</h1>
+            <hr />
+            <Link href='/products'><a href='/products'>Products</a></Link>
+            <Link href='/marvell'><a href='/marvell'>Marvell</a></Link>
           </div>
         </div>
       </Layout>
     </>
   )
-}
-
-export async function getServerSideProps(context) {
-  const request = await fetch('https://dummyjson.com/products');
-  const result = await request.json();
-  const cards = await result.products;
-  const total = await result.total;
-  const skip = await result.skip;
-  const limit = await result.limit;
-
-  return {
-    props: {
-      cards,
-      total,
-      skip,
-      limit
-    }
-  }
 }
 
 
