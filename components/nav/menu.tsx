@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 export default function Menu() {
@@ -5,8 +6,8 @@ export default function Menu() {
     <>
       <div className='menu'>
         <ul>
-          <li><a href=''>Product</a></li>
-          <li><a href=''>Marvell</a></li>
+          <li><Link href='/products'><a href='/products'>Product</a></Link></li>
+          <li><Link href='/marvell'><a href='/marvell'>Marvell</a></Link></li>
         </ul>
       </div>
       <style jsx>{`
